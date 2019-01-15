@@ -62,13 +62,13 @@ class YandexImagePage(object):
 
     def open_first_image(self):
         image = self.driver.find_element(*self.locator.FIRST_IMAGE)
-        hover = ActionChains(self.driver).move_to_element(image).pause(0.5)  # .click(image).perform()
+        hover = ActionChains(self.driver).move_to_element(image).pause(0.5)
         hover.click(image)
         hover.perform()
 
     def check_open_image(self):
         try:
-            self.driver.find_element(*self.locator.CHECK_OPEN_IMAGE)  # find body tag element
+            self.driver.find_element(*self.locator.CHECK_OPEN_IMAGE)
         except NoSuchElementException as e:
             #print(e.msg)
             return False
